@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 
 async function getAccessToken() {
   const clientId = process.env.PAYPAL_CLIENT_ID!

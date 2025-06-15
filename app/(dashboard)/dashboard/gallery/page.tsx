@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { redirect, useRouter } from "next/navigation"
-import { createClient } from "@/lib/supabase/client"
+import { createClient } from "@/utils/supabase/client"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ImageCard } from "@/components/ui/image-card"

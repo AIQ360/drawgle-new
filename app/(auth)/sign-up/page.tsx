@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { AuthForm } from "@/components/auth/auth-form"
-import { createClient } from "@/lib/supabase/client"
+import { createClient } from "@/utils/supabase/client"
 import { useRouter } from "next/navigation"
 import PublicHeader from "@/components/layouts/public-header"
 import PublicFooter from "@/components/layouts/public-footer"

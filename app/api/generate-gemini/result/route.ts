@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 import { generateColoringPage } from "@/utils/gemini/generate"
 
 export async function POST(request: Request) {

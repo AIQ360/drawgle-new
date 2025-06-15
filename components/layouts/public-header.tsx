@@ -8,7 +8,7 @@ import { Icons } from "@/components/icons"
 import { SITE_NAME } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { createClient } from "@/lib/supabase/client"
+import { createClient } from "@/utils/supabase/client"
 
 export default function PublicHeader() {
   const pathname = usePathname()

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 import { generateCover } from "@/utils/fal/cover-generator"
 import { generateUUID } from "@/lib/utils"
 

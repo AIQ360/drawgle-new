@@ -1,6 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 import crypto from "crypto"
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
+import { Database } from "@/types/supabase"
 
 export async function POST(req: NextRequest) {
   try {
@@ -44,15 +45,17 @@ export async function POST(req: NextRequest) {
     }
 
     // Record the transaction
-    const { error: transactionError } = await supabase.from("payment_transactions").insert({
-      user_id: userId,
-      payment_method: "razorpay",
-      amount: amount,
-      credits: credits,
-      order_id: orderCreationId,
-      payment_id: razorpayPaymentId,
-      status: "completed",
-    })
+    const { error: transactionError } = await supabase
+      .from("payment_transactions")
+      .insert({
+        user_id: userId,
+        payment_method: "razorpay",
+        amount: amount,
+        credits: credits,
+        order_id: orderCreationId,
+        payment_id: razorpayPaymentId,
+        status: "completed",
+      })
 
     if (transactionError) {
       console.error("Error recording transaction:", transactionError)
@@ -67,4 +70,4 @@ export async function POST(req: NextRequest) {
     console.error("Razorpay verification error:", error)
     return NextResponse.json({ isOk: false, message: error.message || "Payment verification failed" }, { status: 500 })
   }
-}
+} 

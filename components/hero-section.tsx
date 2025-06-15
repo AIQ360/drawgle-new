@@ -9,10 +9,9 @@ export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const sampleImages = [
-    { src: "https://www.unrealshot.com/images/aimodel4.jpg", alt: "Unicorn coloring page" },
-    { src: "https://www.unrealshot.com/images/aimodel2.jpg", alt: "Dragon coloring page" },
-    { src: "https://www.unrealshot.com/images/aimodel3.jpg", alt: "Castle coloring page" },
-    { src: "/placeholder.svg?height=500&width=400", alt: "Butterfly coloring page" },
+    { src: "/landing/hero-1.png", alt: "Unicorn coloring page" },
+    { src: "/landing/hero-2.png", alt: "Dragon coloring page" },
+    { src: "/landing/hero-3.png", alt: "Castle coloring page" },
   ]
 
   const avatars = [
@@ -39,8 +38,8 @@ export default function HeroSection() {
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
-      <div className="container mx-auto px-4 sm:py-16 pt-24 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 sm:py-2 pt-24 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* Left Column - Content */}
           <div className="space-y-8 text-center lg:text-left order-1">
             {/* Main Heading */}
@@ -124,7 +123,7 @@ export default function HeroSection() {
               {/* Mobile: Stack images vertically, Desktop: Fan layout */}
               <div className="block sm:hidden">
                 {/* Mobile - Single centered image */}
-                <div className="relative mx-auto w-64 h-80 bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="relative mx-auto w-64 h-80 bg-white border-2 border-gray-300 rounded-2xl shadow-xl overflow-hidden">
                   <img
                     src={sampleImages[currentImageIndex].src || "/placeholder.svg"}
                     alt={sampleImages[currentImageIndex].alt}
@@ -136,7 +135,7 @@ export default function HeroSection() {
               {/* Desktop - Fan layout */}
               <div className="hidden sm:block">
                 {/* Left Image - Mostly hidden behind center */}
-                <div className="absolute left-6 sm:left-8 md:left-12 top-1/2 -translate-y-1/2 w-40 sm:w-48 md:w-56 h-[300px] sm:h-[400px] md:h-[500px] bg-white rounded-2xl shadow-lg transform -rotate-12 origin-bottom-right z-5 overflow-hidden">
+                <div className="absolute left-6 sm:left-8 md:left-12 top-1/2 border-2 border-gray-300 -translate-y-1/2 w-40 sm:w-48 md:w-56 h-[300px] sm:h-[400px] md:h-[500px] bg-white rounded-2xl shadow-lg transform -rotate-12 origin-bottom-right z-5 overflow-hidden">
                   <img
                     src={getBackgroundImage(1).src || "/placeholder.svg"}
                     alt={getBackgroundImage(1).alt}
@@ -145,7 +144,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Right Image - Mostly hidden behind center */}
-                <div className="absolute right-6 sm:right-8 md:right-12 top-1/2 -translate-y-1/2 w-40 sm:w-48 md:w-56 h-[300px] sm:h-[400px] md:h-[500px] bg-white rounded-2xl shadow-lg transform rotate-12 origin-bottom-left z-5 overflow-hidden">
+                <div className="absolute right-6 sm:right-8 md:right-12 top-1/2 border-2 border-gray-300 -translate-y-1/2 w-40 sm:w-48 md:w-56 h-[300px] sm:h-[400px] md:h-[500px] bg-white rounded-2xl shadow-lg transform rotate-12 origin-bottom-left z-5 overflow-hidden">
                   <img
                     src={getBackgroundImage(2).src || "/placeholder.svg"}
                     alt={getBackgroundImage(2).alt}
@@ -154,7 +153,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Center Image - Main focus, straight */}
-                <div className="relative mx-auto w-48 sm:w-56 md:w-64 lg:w-72 h-[320px] sm:h-[420px] md:h-[480px] bg-white rounded-2xl shadow-xl z-30 overflow-hidden">
+                <div className="relative mx-auto w-48 sm:w-56 md:w-64 lg:w-72 h-[320px] border-2 border-gray-300 sm:h-[420px] md:h-[480px] bg-white rounded-2xl shadow-xl z-30 overflow-hidden">
                   <img
                     src={sampleImages[currentImageIndex].src || "/placeholder.svg"}
                     alt={sampleImages[currentImageIndex].alt}

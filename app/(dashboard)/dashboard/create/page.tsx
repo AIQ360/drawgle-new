@@ -4,7 +4,7 @@ import { DialogFooter } from "@/components/ui/dialog"
 
 import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
-import { createClient } from "@/lib/supabase/client"
+import { createClient } from "@/utils/supabase/client"
 import type { AspectRatio, GenerateImageParams } from "@/types"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"

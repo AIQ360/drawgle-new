@@ -1,6 +1,6 @@
 "use server"
 
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 import { type SubscriptionTier, SUBSCRIPTION_PLANS } from "@/lib/subscription-plans"
 
 export async function updateSubscription(tier: SubscriptionTier) {

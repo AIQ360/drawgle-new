@@ -71,24 +71,18 @@ export interface Database {
         Row: {
           id: string
           credits: number
-          subscription_tier: string
-          subscription_status: string
-          created_at: string
-          updated_at: string
+          created_at?: string
+          updated_at?: string
         }
         Insert: {
           id: string
           credits?: number
-          subscription_tier?: string
-          subscription_status?: string
           created_at?: string
           updated_at?: string
         }
         Update: {
           id?: string
           credits?: number
-          subscription_tier?: string
-          subscription_status?: string
           created_at?: string
           updated_at?: string
         }
@@ -125,6 +119,50 @@ export interface Database {
           updated_at?: string
         }
       }
+      payment_transactions: {
+        Row: {
+          id: string
+          user_id: string
+          payment_method: string
+          amount: number
+          credits: number
+          order_id: string
+          payment_id: string
+          status: string
+          created_at?: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          payment_method: string
+          amount: number
+          credits: number
+          order_id: string
+          payment_id: string
+          status: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          payment_method?: string
+          amount?: number
+          credits?: number
+          order_id?: string
+          payment_id?: string
+          status?: string
+          created_at?: string
+        }
+      }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
     }
   }
 }

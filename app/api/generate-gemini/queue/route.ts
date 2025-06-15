@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 import { bufferToBase64 } from "@/utils/gemini/geminiClient"
 import { queueColoringPageGeneration } from "@/utils/gemini/generate"
 
