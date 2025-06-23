@@ -29,7 +29,7 @@ export function MarketingPageClient() {
     "Unicorn": "https://rhcmqpuqozvwyrffixnx.supabase.co/storage/v1/object/public/coloring-pages/private/cae7654d-bd38-46fc-b82d-c50fa5402535-1747041104711-0-a_unicorn.png",
     "Dinosaur": "https://rhcmqpuqozvwyrffixnx.supabase.co/storage/v1/object/public/coloring-pages/private/cae7654d-bd38-46fc-b82d-c50fa5402535-1747041118433-0-a_Dinosaur.png",
     "Spaceship": "https://rhcmqpuqozvwyrffixnx.supabase.co/storage/v1/object/public/coloring-pages/private/cae7654d-bd38-46fc-b82d-c50fa5402535-1747041139347-0-a_Spaceship_outline.png",
-    "Princess": "https://rhcmqpuqozvwyrffixnx.supabase.co/storage/v1/object/public/coloring-pages/private/cae7654d-bd38-46fc-b82d-c50fa5402535-1747041153427-0-a_Princess_outline.png",
+    "Princess": "/landing/princess.jpg",
     "Dragon": "https://rhcmqpuqozvwyrffixnx.supabase.co/storage/v1/object/public/coloring-pages/private/cae7654d-bd38-46fc-b82d-c50fa5402535-1747041165271-0-a_Dragon_outline.png",
     "Robot": "https://rhcmqpuqozvwyrffixnx.supabase.co/storage/v1/object/public/coloring-pages/private/cae7654d-bd38-46fc-b82d-c50fa5402535-1747041177671-0-a_Robot_outline.png",
     "Mermaid": "https://rhcmqpuqozvwyrffixnx.supabase.co/storage/v1/object/public/coloring-pages/private/cae7654d-bd38-46fc-b82d-c50fa5402535-1747041191299-0-a_Mermaid_outline.png",
@@ -225,14 +225,14 @@ export function MarketingPageClient() {
       <section id="features"  className="w-full py-24 md:py-32 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="container px-4 md:px-6">
           <div className="grid gap-16 lg:grid-cols-2 items-center">
-            <div className="relative w-[500px] mx-auto">
+            <div className="relative w-full max-w-[350px] md:max-w-[500px] mx-auto">
               {/* Main showcase image */}
               <div className="relative rounded-2xl overflow-hidden shadow">
                 <div className="aspect-[3/4] bg-gradient-to-br from-gray-50 to-gray-100">
                   <img
                     src={imageMap["Princess"] || "/placeholder.svg"}
                     alt="AI Coloring Page Creation"
-                    className="w-full h-full object-cover"
+                    className="w-full max-w-full h-auto object-contain rounded-xl shadow"
                   />
                 </div>
               </div>
@@ -359,14 +359,14 @@ export function MarketingPageClient() {
                 </Link>
               </div>
             </div>
-            <div className="relative w-[500px] mx-auto">
+            <div className="relative w-full max-w-[350px] md:max-w-[500px] mx-auto">
               {/* Main book preview */}
               <div className="relative rounded-2xl overflow-hidden shadow">
                 <div className="aspect-[3/4] bg-gradient-to-br from-gray-50 to-gray-100">
                   <img
                     src="/landing/pdf-cover-book.png"
                     alt="Coloring Book Preview"
-                    className="w-full h-full object-fit"
+                    className="w-full max-w-full h-auto object-contain rounded-xl shadow"
                   />
                 </div>
               </div>
@@ -379,11 +379,11 @@ export function MarketingPageClient() {
       <section className="w-full py-24 md:py-32">
         <div className="container px-4 md:px-6">
           <div className="grid gap-16 lg:grid-cols-2 items-center">
-            <div className="relative w-[500px] mx-auto">
+            <div className="relative w-full max-w-[350px] md:max-w-[500px] mx-auto">
               {/* Image Comparison Slider */}
               <div
                 ref={sliderRef}
-                className="relative rounded-2xl overflow-hidden shadow cursor-ew-resize select-none"
+                className="relative rounded-2xl overflow-hidden shadow cursor-ew-resize select-none w-full max-w-full"
                 onMouseDown={(e) => e.preventDefault()}
               >
                 <div className="aspect-[3/4] bg-gradient-to-br from-gray-50 to-gray-100">
@@ -392,7 +392,7 @@ export function MarketingPageClient() {
                     <img
                       src="/landing/image-to-coloring2.png"
                       alt="Original Photo"
-                      className="w-full h-full object-cover select-none"
+                      className="w-full max-w-full h-auto object-contain select-none rounded-xl shadow"
                       draggable="false"
                     />
                   </div>
@@ -406,7 +406,7 @@ export function MarketingPageClient() {
                     <img
                       src="/landing/image-to-coloring.png"
                       alt="Coloring Page"
-                      className="w-full h-full object-cover select-none"
+                      className="w-full max-w-full h-auto object-contain select-none rounded-xl shadow"
                       draggable="false"
                     />
                   </div>
@@ -657,7 +657,7 @@ export function MarketingPageClient() {
 
       {/* Use Cases Section - Modern Redesign */}
       <section className="w-full py-24 md:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
           {/* Section header with minimal styling */}
           <div className="max-w-3xl mx-auto mb-20">
             <div className="inline-block h-1 w-12 bg-primary mb-6"></div>
