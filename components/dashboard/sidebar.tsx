@@ -16,7 +16,7 @@ export function Sidebar({ className }: SidebarProps) {
   const pathname = usePathname()
 
   return (
-    <div className={cn("pb-12 w-64 border-r bg-pastel-blue/10", className)}>
+    <div className={cn("pb-12 w-64 border-r", className)}>
       <div className="space-y-4 py-4">
        
         <div className="px-4">

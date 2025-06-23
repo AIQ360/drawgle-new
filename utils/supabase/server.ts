@@ -29,7 +29,7 @@ export async function createClient() {
         },
       },
       auth: {
-        persistSession: false
+        persistSession: true
       },
       // Disable realtime in server components
       realtime: {

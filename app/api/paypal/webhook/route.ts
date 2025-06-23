@@ -155,9 +155,15 @@ export async function POST(request: Request) {
 
       if (!userError) {
         const newCredits = (userData?.credits || 0) + creditsPurchased
+        const updateFields: any = { credits: newCredits }
+        if (creditsPurchased > 0) {
+          updateFields.subscription_tier = packageKey
+          updateFields.subscription_status = "active"
+          updateFields.updated_at = new Date().toISOString()
+        }
         const { error: updateError } = await supabase
           .from("users_metadata")
-          .update({ credits: newCredits })
+          .update(updateFields)
           .eq("id", userId)
 
         if (!updateError) {
@@ -167,33 +173,7 @@ export async function POST(request: Request) {
           console.error("Error updating credits in users_metadata:", updateError)
         }
       } else {
-        console.log("User not found in users_metadata, trying profiles table")
-      }
-
-      // If users_metadata failed, try profiles
-      if (!updated) {
-        const { data: profileData, error: profileError } = await supabase
-          .from("profiles")
-          .select("credits")
-          .eq("id", userId)
-          .single()
-
-        if (!profileError) {
-          const newCredits = (profileData?.credits || 0) + creditsPurchased
-          const { error: updateError } = await supabase
-            .from("profiles")
-            .update({ credits: newCredits })
-            .eq("id", userId)
-
-          if (!updateError) {
-            updated = true
-            console.log(`Updated credits in profiles for user ${userId}: ${newCredits}`)
-          } else {
-            console.error("Error updating credits in profiles:", updateError)
-          }
-        } else {
-          console.error("Error fetching user data from profiles:", profileError)
-        }
+        console.error("User not found in users_metadata, cannot update credits or subscription fields.")
       }
 
       if (!updated) {

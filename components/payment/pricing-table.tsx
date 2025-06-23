@@ -284,75 +284,7 @@ const PricingTable: React.FC<PricingTableProps> = ({ userId }) => {
             })}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-12 mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl font-semibold text-center">How Credits Work</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>1 credit</strong> = 1 coloring page generation
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>
-                      Generate from <strong>text prompts</strong> or <strong>upload images</strong>
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>Download and print</strong> as many times as you want
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>Create coloring books</strong> from your generated pages
-                    </span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl font-semibold text-center">Why Choose Our Coloring Pages</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>High-quality</strong> line art perfect for coloring
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>Customizable</strong> - create exactly what your kids want
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>Educational</strong> - create pages that match what they're learning
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>Family photos</strong> to coloring pages - create meaningful keepsakes
-                    </span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
+ 
           <div className="mt-12 text-center">
             <p className="text-gray-500">
               All plans include unlimited downloads and access to both text-to-image and photo-to-coloring features.

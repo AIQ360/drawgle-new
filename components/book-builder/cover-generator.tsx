@@ -13,6 +13,24 @@ import { Card } from "@/components/ui/card"
 interface CoverGeneratorProps {
   onCoverGenerated: (coverUrl: string, coverId: string) => void
   userCredits: number
+  title: string
+  setTitle: (v: string) => void
+  subtitle: string
+  setSubtitle: (v: string) => void
+  authorName: string
+  setAuthorName: (v: string) => void
+  coverElements: string
+  setCoverElements: (v: string) => void
+  style: string
+  setStyle: (v: string) => void
+  colorTheme: string
+  setColorTheme: (v: string) => void
+  isGenerating: boolean
+  setIsGenerating: (v: boolean) => void
+  generatedCoverUrl: string | null
+  setGeneratedCoverUrl: (v: string | null) => void
+  coverError: string | null
+  setCoverError: (v: string | null) => void
 }
 
 const MAX_TITLE_LENGTH = 30 // About 6-7 words
@@ -38,19 +56,28 @@ const COLOR_THEMES = [
   { value: "nature", label: "Natural Colors" },
 ]
 
-// Update the component to save state to sessionStorage
-export function CoverGenerator({ onCoverGenerated, userCredits }: CoverGeneratorProps) {
-  const [title, setTitle] = useState("")
-  const [subtitle, setSubtitle] = useState("")
-  const [authorName, setAuthorName] = useState("")
-  const [coverElements, setCoverElements] = useState("")
-  const [style, setStyle] = useState("auto")
-  const [colorTheme, setColorTheme] = useState("vibrant")
-  const [isGenerating, setIsGenerating] = useState(false)
-  const [generatedCoverUrl, setGeneratedCoverUrl] = useState<string | null>(null)
-  const [coverId, setCoverId] = useState<string | null>(null)
-  const [error, setError] = useState<string | null>(null)
-
+export function CoverGenerator({
+  onCoverGenerated,
+  userCredits,
+  title,
+  setTitle,
+  subtitle,
+  setSubtitle,
+  authorName,
+  setAuthorName,
+  coverElements,
+  setCoverElements,
+  style,
+  setStyle,
+  colorTheme,
+  setColorTheme,
+  isGenerating,
+  setIsGenerating,
+  generatedCoverUrl,
+  setGeneratedCoverUrl,
+  coverError,
+  setCoverError,
+}: CoverGeneratorProps) {
   // Load saved state on component mount
   useEffect(() => {
     try {
@@ -64,11 +91,10 @@ export function CoverGenerator({ onCoverGenerated, userCredits }: CoverGenerator
         setStyle(parsedState.style || "auto")
         setColorTheme(parsedState.colorTheme || "vibrant")
         setGeneratedCoverUrl(parsedState.generatedCoverUrl || null)
-        setCoverId(parsedState.coverId || null)
 
         // If we have a previously generated cover, notify the parent
-        if (parsedState.generatedCoverUrl && parsedState.coverId) {
-          onCoverGenerated(parsedState.generatedCoverUrl, parsedState.coverId)
+        if (parsedState.generatedCoverUrl) {
+          onCoverGenerated(parsedState.generatedCoverUrl, "")
         }
       }
     } catch (error) {
@@ -87,13 +113,12 @@ export function CoverGenerator({ onCoverGenerated, userCredits }: CoverGenerator
         style,
         colorTheme,
         generatedCoverUrl,
-        coverId,
       }
       sessionStorage.setItem("coverGeneratorState", JSON.stringify(stateToSave))
     } catch (error) {
       console.error("Error saving cover generator state:", error)
     }
-  }, [title, subtitle, authorName, coverElements, style, colorTheme, generatedCoverUrl, coverId])
+  }, [title, subtitle, authorName, coverElements, style, colorTheme, generatedCoverUrl])
 
   const generatePrompt = () => {
     let prompt = `A professional coloring book cover titled "${title}"`
@@ -155,7 +180,7 @@ export function CoverGenerator({ onCoverGenerated, userCredits }: CoverGenerator
     }
 
     setIsGenerating(true)
-    setError(null)
+    setCoverError(null)
 
     try {
       const prompt = generatePrompt()
@@ -191,7 +216,6 @@ export function CoverGenerator({ onCoverGenerated, userCredits }: CoverGenerator
       // Success! We have a cover
       setIsGenerating(false)
       setGeneratedCoverUrl(data.coverUrl)
-      setCoverId(data.coverId)
 
       // Pass both the URL and ID to the parent component
       onCoverGenerated(data.coverUrl, data.coverId)
@@ -202,7 +226,7 @@ export function CoverGenerator({ onCoverGenerated, userCredits }: CoverGenerator
     } catch (error: any) {
       console.error("Error generating cover:", error)
       setIsGenerating(false)
-      setError(error.message || "Failed to generate cover")
+      setCoverError(error.message || "Failed to generate cover")
       toast.error("Failed to generate cover", {
         description: error.message || "Please try again later.",
       })
@@ -319,12 +343,20 @@ export function CoverGenerator({ onCoverGenerated, userCredits }: CoverGenerator
               <>Generate Professional Cover (5 Credits)</>
             )}
           </Button>
-          <p className="text-xs text-center mt-2 text-muted-foreground">You have {userCredits} credits available</p>
+          {userCredits >= 5 ? (
+            <p className="text-xs text-center mt-2 text-muted-foreground">
+              You have {userCredits} credits available
+            </p>
+          ) : (
+            <p className="text-xs text-center mt-2 text-red-500">
+              You need at least 5 credits to generate a cover. You have {userCredits} credits.
+            </p>
+          )}
 
-          {error && (
+          {coverError && (
             <div className="mt-2 p-2 bg-red-50 border border-red-200 rounded-md text-red-600 text-sm">
               <p className="font-medium">Error:</p>
-              <p>{error}</p>
+              <p>{coverError}</p>
             </div>
           )}
         </div>

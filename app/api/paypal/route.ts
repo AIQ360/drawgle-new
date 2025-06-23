@@ -101,9 +101,15 @@ export async function POST(request: NextRequest) {
 
     // Update the user's credits in users_metadata
     const newCredits = userData.credits + creditsPurchased
+    const updateFields: any = { credits: newCredits }
+    if (creditsPurchased > 0) {
+      updateFields.subscription_tier = packageKey
+      updateFields.subscription_status = "active"
+      updateFields.updated_at = new Date().toISOString()
+    }
     const { error: updateError } = await supabase
       .from("users_metadata")
-      .update({ credits: newCredits })
+      .update(updateFields)
       .eq("id", payerId)
 
     if (updateError) {

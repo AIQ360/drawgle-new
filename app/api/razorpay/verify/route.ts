@@ -5,7 +5,7 @@ import { Database } from "@/types/supabase"
 
 export async function POST(req: NextRequest) {
   try {
-    const { orderCreationId, razorpayPaymentId, razorpaySignature, amount, userId, credits } = await req.json()
+    const { orderCreationId, razorpayPaymentId, razorpaySignature, amount, userId, credits, planKey } = await req.json()
 
     // Verify the payment signature
     const expectedSignature = crypto
@@ -35,9 +35,15 @@ export async function POST(req: NextRequest) {
 
     // Update credits
     const newCredits = (userData?.credits || 0) + credits
+    const updateFields: any = { credits: newCredits }
+    if (credits > 0 && planKey) {
+      updateFields.subscription_tier = planKey
+      updateFields.subscription_status = "active"
+      updateFields.updated_at = new Date().toISOString()
+    }
     const { error: updateError } = await supabase
       .from("users_metadata")
-      .update({ credits: newCredits })
+      .update(updateFields)
       .eq("id", userId)
 
     if (updateError) {

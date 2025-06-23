@@ -287,7 +287,7 @@ export function MarketingPageClient() {
               {/* CTA */}
               <div className="pt-4">
                 <Link href="/sign-up" passHref>
-                  <Button size="lg" className="bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-lg text-lg px-8 text-white hover:from-pastel-pink/90 hover:to-pastel-purple/90">
+                  <Button size="lg" className="rounded-xl bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white text-lg px-8 text-white hover:from-pastel-pink/90 hover:to-pastel-purple/90">
                     Start Creating Now
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -352,7 +352,7 @@ export function MarketingPageClient() {
               {/* CTA */}
               <div className="pt-4">
                 <Link href="/sign-up" passHref>
-                  <Button size="lg" className="bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-lg text-lg px-8 text-white hover:from-pastel-pink/90 hover:to-pastel-purple/90">
+                  <Button size="lg" className="rounded-xl bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white text-lg px-8 text-white hover:from-pastel-pink/90 hover:to-pastel-purple/90">
                     Create Your First Book
                     <BookOpen className="ml-2 h-5 w-5" />
                   </Button>
@@ -490,7 +490,7 @@ export function MarketingPageClient() {
               {/* CTA */}
               <div className="pt-4">
                 <Link href="/sign-up" passHref>
-                  <Button size="lg" className="bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-lg text-lg px-8 text-white hover:from-pastel-pink/90 hover:to-pastel-purple/90">
+                  <Button size="lg" className="rounded-xl bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white text-lg px-8 text-white hover:from-pastel-pink/90 hover:to-pastel-purple/90">
                     Transform Your Photos Now
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>

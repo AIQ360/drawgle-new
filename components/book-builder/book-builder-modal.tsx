@@ -115,6 +115,17 @@ export function BookBuilderModal({
   const [isProfessionalCover, setIsProfessionalCover] = useState(false)
   const [coverId, setCoverId] = useState<string | null>(null)
 
+  // Cover generator state (lifted up)
+  const [coverTitle, setCoverTitle] = useState("")
+  const [coverSubtitle, setCoverSubtitle] = useState("")
+  const [coverAuthorName, setCoverAuthorName] = useState("")
+  const [coverElements, setCoverElements] = useState("")
+  const [coverStyle, setCoverStyle] = useState("auto")
+  const [coverColorTheme, setCoverColorTheme] = useState("vibrant")
+  const [coverIsGenerating, setCoverIsGenerating] = useState(false)
+  const [generatedCoverUrl, setGeneratedCoverUrl] = useState<string | null>(null)
+  const [coverError, setCoverError] = useState<string | null>(null)
+
   // Set up DnD sensors
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -172,14 +183,6 @@ export function BookBuilderModal({
       return
     }
 
-    // Check if user has enough credits
-    if (userCredits < 20) {
-      toast.error("Not enough credits", {
-        description: "You need at least 20 credits to save a coloring book.",
-      })
-      return
-    }
-
     setIsSaving(true)
     try {
       // Extract image IDs and maintain order
@@ -207,25 +210,8 @@ export function BookBuilderModal({
         throw new Error(result.error || "Failed to save book")
       }
 
-      // Deduct 20 credits for book creation
-      const response = await fetch("/api/deduct-credits", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          credits: 20,
-          description: "Coloring book creation",
-        }),
-      })
-
-      if (!response.ok) {
-        const error = await response.json()
-        throw new Error(error.message || "Failed to deduct credits")
-      }
-
       toast.success("Coloring book saved successfully!", {
-        description: "20 credits have been deducted from your account.",
+        description: "Your book has been saved to your collection.",
       })
 
       // Redirect to the books page
@@ -247,14 +233,10 @@ export function BookBuilderModal({
   }
 
   const onCoverGenerated = (url: string, id: string) => {
-    setCoverImage(url)
+    setGeneratedCoverUrl(url)
     setCoverId(id)
-
-    // If we're on the cover tab, we can optionally auto-advance to the next tab
-    // Uncomment this if you want to auto-advance
-    // if (activeTab === "cover") {
-    //   setActiveTab("options");
-    // }
+    setCoverImage(url)
+    setIsProfessionalCover(true)
   }
 
   return (
@@ -338,9 +320,30 @@ export function BookBuilderModal({
           </TabsContent>
 
           {/* Professional Cover Tab */}
-          <TabsContent value="pro-cover" className="flex-1 overflow-auto p-4">
-            <CoverGenerator onCoverGenerated={onCoverGenerated} userCredits={userCredits} />
-          </TabsContent>
+          <div style={{ display: activeTab === "pro-cover" ? undefined : "none" }} className="flex-1 overflow-auto p-4">
+            <CoverGenerator
+              onCoverGenerated={onCoverGenerated}
+              userCredits={userCredits}
+              title={coverTitle}
+              setTitle={setCoverTitle}
+              subtitle={coverSubtitle}
+              setSubtitle={setCoverSubtitle}
+              authorName={coverAuthorName}
+              setAuthorName={setCoverAuthorName}
+              coverElements={coverElements}
+              setCoverElements={setCoverElements}
+              style={coverStyle}
+              setStyle={setCoverStyle}
+              colorTheme={coverColorTheme}
+              setColorTheme={setCoverColorTheme}
+              isGenerating={coverIsGenerating}
+              setIsGenerating={setCoverIsGenerating}
+              generatedCoverUrl={generatedCoverUrl}
+              setGeneratedCoverUrl={setGeneratedCoverUrl}
+              coverError={coverError}
+              setCoverError={setCoverError}
+            />
+          </div>
 
           {/* Book Options Tab */}
           <TabsContent value="options" className="flex-1 overflow-auto p-4">
@@ -435,6 +438,27 @@ export function BookBuilderModal({
                   </p>
                 </div>
               )}
+
+              {/* Save Book button only in Book Options tab */}
+              <div className="flex justify-end pt-4">
+                <Button
+                  onClick={handleSaveBook}
+                  disabled={isSaving || orderedImages.length === 0}
+                  className="min-w-[160px]"
+                >
+                  {isSaving ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Saving...
+                    </>
+                  ) : (
+                    <>
+                      <Save className="mr-2 h-4 w-4" />
+                      Save Book
+                    </>
+                  )}
+                </Button>
+              </div>
             </div>
           </TabsContent>
         </Tabs>
@@ -443,23 +467,6 @@ export function BookBuilderModal({
           <div className="flex flex-wrap gap-2 w-full sm:w-auto">
             <Button variant="outline" onClick={onClearSelection} className="flex-1 sm:flex-none">
               Clear Selection
-            </Button>
-            <Button
-              onClick={handleSaveBook}
-              disabled={isSaving || orderedImages.length === 0 || userCredits < 20}
-              className="flex-1 sm:flex-none"
-            >
-              {isSaving ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Saving...
-                </>
-              ) : (
-                <>
-                  <Save className="mr-2 h-4 w-4" />
-                  Save Book (20 Credits)
-                </>
-              )}
             </Button>
           </div>
         </DialogFooter>

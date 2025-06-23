@@ -21,6 +21,7 @@ const CouponInput: React.FC<CouponInputProps> = ({ onApplyCoupon }) => {
   const [couponCode, setCouponCode] = useState("")
   const [appliedCoupon, setAppliedCoupon] = useState<string | null>(null)
   const [isValidating, setIsValidating] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleApplyCoupon = () => {
     if (!couponCode.trim()) {
@@ -29,10 +30,12 @@ const CouponInput: React.FC<CouponInputProps> = ({ onApplyCoupon }) => {
         description: "Please enter a coupon code",
         variant: "destructive",
       })
+      setError("Please enter a coupon code")
       return
     }
 
     setIsValidating(true)
+    setError(null)
 
     // Simulate API call with setTimeout
     setTimeout(() => {
@@ -45,12 +48,14 @@ const CouponInput: React.FC<CouponInputProps> = ({ onApplyCoupon }) => {
           title: "Coupon Applied",
           description: `${coupon.discount}% discount applied to your purchase!`,
         })
+        setError(null)
       } else {
         toast({
           title: "Invalid Coupon",
           description: "The coupon code you entered is invalid or expired.",
           variant: "destructive",
         })
+        setError("The coupon code you entered is invalid or expired.")
       }
 
       setIsValidating(false)
@@ -65,22 +70,31 @@ const CouponInput: React.FC<CouponInputProps> = ({ onApplyCoupon }) => {
       title: "Coupon Removed",
       description: "The coupon has been removed from your purchase.",
     })
+    setError(null)
   }
 
   return (
     <div className="w-full max-w-md mx-auto mb-8">
       {!appliedCoupon ? (
+        <>
         <div className="flex gap-2">
           <Input
             placeholder="Enter coupon code"
             value={couponCode}
-            onChange={(e) => setCouponCode(e.target.value)}
+            onChange={(e) => {
+              setCouponCode(e.target.value)
+              setError(null)
+            }}
             className="flex-1"
           />
           <Button onClick={handleApplyCoupon} disabled={isValidating || !couponCode.trim()}>
             {isValidating ? "Validating..." : "Apply"}
           </Button>
         </div>
+        {error && (
+          <div className="text-xs text-red-500 mt-2 text-left">{error}</div>
+        )}
+        </>
       ) : (
         <div className="flex items-center justify-between p-2 bg-primary/10 border border-primary/20 rounded-md">
           <div className="flex items-center gap-2">

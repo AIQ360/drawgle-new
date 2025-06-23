@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/server"
 import { Sidebar } from "@/components/dashboard/sidebar"
 import { Header } from "@/components/dashboard/header"
 import { Toaster } from "@/components/ui/toaster"
+import { AppInitializer } from "@/components/app-initializer"
 
 export default async function DashboardLayout({
   children,
@@ -18,7 +19,7 @@ export default async function DashboardLayout({
   } = await supabase.auth.getUser()
 
   if (!user) {
-    redirect("/sign-in")
+    return <div className="flex items-center justify-center min-h-screen">Loading...</div>
   }
 
   const { data: userData } = await supabase.from("users_metadata").select("*").eq("id", user.id).single()
@@ -35,6 +36,7 @@ export default async function DashboardLayout({
 
   return (
     <div className="flex min-h-screen flex-col">
+      <AppInitializer />
       <Header user={userWithMetadata} />
       <div className="flex flex-1">
         <Sidebar className="hidden md:block" />

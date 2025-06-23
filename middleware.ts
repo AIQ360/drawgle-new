@@ -48,6 +48,21 @@ export async function middleware(request: NextRequest) {
     return response
   }
 
+  // --- ENHANCEMENT: Clear stale Supabase cookies if present but session is missing ---
+  const hasSupabaseCookies =
+    request.cookies.has("sb-access-token") ||
+    request.cookies.has("sb-refresh-token") ||
+    request.cookies.has("sb-session")
+
+  if (!session && hasSupabaseCookies && request.nextUrl.pathname.startsWith("/dashboard")) {
+    // Clear all Supabase cookies
+    response.cookies.set("sb-access-token", "", { maxAge: 0 })
+    response.cookies.set("sb-refresh-token", "", { maxAge: 0 })
+    response.cookies.set("sb-session", "", { maxAge: 0 })
+    const redirectUrl = new URL("/sign-in", request.url)
+    return NextResponse.redirect(redirectUrl)
+  }
+
   // Auth condition: protect dashboard routes
   if (!session && request.nextUrl.pathname.startsWith("/dashboard")) {
     const redirectUrl = new URL("/sign-in", request.url)

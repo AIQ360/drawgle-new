@@ -33,6 +33,8 @@ export default function GalleryPage() {
 
   const ITEMS_PER_PAGE = 20
 
+  const [userCredits, setUserCredits] = useState<number>(0)
+
   const fetchUserImages = async (pageNum = 1, append = false) => {
     console.log("Fetching user images, page:", pageNum, "append:", append)
     setIsLoading(true)
@@ -152,6 +154,24 @@ export default function GalleryPage() {
       fetchUserGeminiImages(geminiPage, geminiPage > 1)
     }
   }, [page, geminiPage, activeTab])
+
+  useEffect(() => {
+    const fetchCredits = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
+      if (!user) return
+      const { data, error } = await supabase
+        .from("users_metadata")
+        .select("credits")
+        .eq("id", user.id)
+        .single()
+      if (!error && data && typeof data.credits === "number") {
+        setUserCredits(data.credits)
+      }
+    }
+    fetchCredits()
+  }, [])
 
   const handleLoadMore = () => {
     if (!isLoading) {
@@ -348,7 +368,6 @@ export default function GalleryPage() {
                 <div key={image.id} className="w-full">
                   <ImageCard
                     id={image.id}
-                    prompt={image.prompt}
                     imageUrl={image.image_url}
                     aspectRatio={image.aspect_ratio}
                     createdAt={image.created_at}
@@ -364,7 +383,6 @@ export default function GalleryPage() {
                     onSelectToggle={() =>
                       toggleImageSelection({
                         id: image.id,
-                        prompt: image.prompt,
                         image_url: image.image_url,
                         source: "regular",
                       })
@@ -376,7 +394,6 @@ export default function GalleryPage() {
                 <div key={image.id} className="w-full">
                   <ImageCard
                     id={image.id}
-                    prompt={image.prompt || "Image to Coloring Page"}
                     imageUrl={image.coloring_page_url}
                     aspectRatio={image.aspect_ratio || "square"}
                     createdAt={image.created_at}
@@ -393,7 +410,6 @@ export default function GalleryPage() {
                     onSelectToggle={() =>
                       toggleImageSelection({
                         id: image.id,
-                        prompt: image.prompt || "Image to Coloring Page",
                         coloring_page_url: image.coloring_page_url,
                         source: "gemini",
                       })
@@ -486,6 +502,7 @@ export default function GalleryPage() {
         onClose={() => setIsBookBuilderOpen(false)}
         selectedImages={selectedImages}
         onClearSelection={handleClearSelection}
+        userCredits={userCredits}
       />
     </div>
   )
