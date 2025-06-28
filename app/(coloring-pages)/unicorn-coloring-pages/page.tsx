@@ -339,20 +339,20 @@ export default function UnicornColoringPages() {
             name: "Unicorn Coloring Pages",
             description:
               "Download free printable unicorn coloring pages for kids and adults. Magical unicorn designs featuring rainbows, stars, and fantasy scenes perfect for unicorn lovers.",
-            url: "https://drawgle.com/unicorn-coloring-pages",
+            url: "https://drawgle.in/unicorn-coloring-pages",
             mainEntity: {
               "@type": "ItemList",
               itemListElement: [
                 {
                   "@type": "ListItem",
                   position: 1,
-                  url: "https://drawgle.com/unicorn-coloring-pages#printable-unicorns",
+                  url: "https://drawgle.in/unicorn-coloring-pages#printable-unicorns",
                   name: "Printable Unicorn Coloring Pages",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
-                  url: "https://drawgle.com/unicorn-coloring-pages#download",
+                  url: "https://drawgle.in/unicorn-coloring-pages#download",
                   name: "Download Unicorn Coloring Pages",
                 },
               ],

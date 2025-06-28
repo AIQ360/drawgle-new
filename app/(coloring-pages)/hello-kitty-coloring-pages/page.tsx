@@ -315,7 +315,7 @@ export default function HelloKittyColoringPages() {
               name: "Drawgle",
               logo: {
                 "@type": "ImageObject",
-                url: "https://drawgle.com/logo.png",
+                url: "https://drawgle.in/logo.png",
               },
             },
             datePublished: "2023-01-01T00:00:00Z",

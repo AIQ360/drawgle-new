@@ -518,12 +518,12 @@ export function MarketingPageClient() {
             </p>
           </div>
 
-          <div className="relative w-full max-w-[1200px] mx-auto py-12">
+          <div className="relative w-full mx-auto py-12">
             {/* Testimonials Container */}
             <div className="flex overflow-x-auto pb-4 custom-scrollbar snap-x snap-mandatory">
 
               {/* Testimonial 1 */}
-              <div className="flex-shrink-0 w-80 snap-center mx-4 relative flex flex-col space-y-4 rounded-2xl border bg-white p-6 shadow-sm">
+              <div className="flex-shrink-0 w-80 snap-center relative flex flex-col space-y-4 rounded-2xl border bg-white p-6 shadow-sm">
                 <div className="flex items-center space-x-4">
                   <div className="h-12 w-12 overflow-hidden rounded-full">
                     <img
@@ -649,8 +649,8 @@ export function MarketingPageClient() {
             </div>
 
             {/* Pseudo-elements for fade effect */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent md:w-32"></div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent md:w-32"></div>
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-32"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-32"></div>
           </div>
         </div>
       </section>
@@ -693,9 +693,9 @@ export function MarketingPageClient() {
             
             {/* Right column - Parent use cases */}
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Use case cards with modern styling */}
-                <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6">
                     <Star className="h-6 w-6 text-primary" />
                   </div>
@@ -705,7 +705,7 @@ export function MarketingPageClient() {
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6">
                     <Globe className="h-6 w-6 text-primary" />
                   </div>
@@ -715,15 +715,9 @@ export function MarketingPageClient() {
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 p-8 rounded-lg">
-                  <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6">
-                    <Image 
-                      src="/placeholder.svg" 
-                      alt="Feature icon" 
-                      width={24} 
-                      height={24} 
-                      className="h-6 w-6 text-primary" 
-                    />
+                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6">
+                    <Star className="h-6 w-6 text-primary" />
                   </div>
                   <h4 className="text-xl font-semibold mb-3">Family memories</h4>
                   <p className="text-gray-600">
@@ -731,7 +725,7 @@ export function MarketingPageClient() {
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6">
                     <BookOpen className="h-6 w-6 text-primary" />
                   </div>
@@ -750,7 +744,7 @@ export function MarketingPageClient() {
             <div className="lg:col-span-7 order-2 lg:order-1">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Use case cards with modern styling */}
-                <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6">
                     <BookOpen className="h-6 w-6 text-primary" />
                   </div>
@@ -760,7 +754,7 @@ export function MarketingPageClient() {
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6">
                     <Users className="h-6 w-6 text-primary" />
                   </div>
@@ -770,7 +764,7 @@ export function MarketingPageClient() {
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6">
                     <Calendar className="h-6 w-6 text-primary" />
                   </div>
@@ -780,7 +774,7 @@ export function MarketingPageClient() {
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6">
                     <Clock className="h-6 w-6 text-primary" />
                   </div>

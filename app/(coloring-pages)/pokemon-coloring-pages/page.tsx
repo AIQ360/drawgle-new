@@ -358,20 +358,20 @@ export default function PokemonColoringPages() {
             name: "Pokemon Coloring Pages",
             description:
               "Download free printable Pokemon coloring pages featuring Pikachu, Charizard, Eevee and more. Perfect for Pokemon fans of all ages.",
-            url: "https://drawgle.com/pokemon-coloring-pages",
+            url: "https://drawgle.in/pokemon-coloring-pages",
             mainEntity: {
               "@type": "ItemList",
               itemListElement: [
                 {
                   "@type": "ListItem",
                   position: 1,
-                  url: "https://drawgle.com/pokemon-coloring-pages#printable-pokemon",
+                  url: "https://drawgle.in/pokemon-coloring-pages#printable-pokemon",
                   name: "Printable Pokemon Coloring Pages",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
-                  url: "https://drawgle.com/pokemon-coloring-pages#download",
+                  url: "https://drawgle.in/pokemon-coloring-pages#download",
                   name: "Download Pokemon Coloring Pages",
                 },
               ],

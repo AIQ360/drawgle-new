@@ -23,10 +23,10 @@ export const metadata: Metadata = {
 
 export default function ColoringPagesHub() {
   return (
-    <div>
+    <div className="px-4 py-24">
       {/* Hero Section */}
-      <section className="py-12 mb-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl">
-        <div className="container mx-auto px-4 text-center">
+      <section className="container py-12 mb-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl">
+        <div className=" mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Free Printable Coloring Pages</h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
             Discover thousands of free printable coloring pages for kids and adults. From Disney characters to animals,
@@ -50,7 +50,7 @@ export default function ColoringPagesHub() {
       </section>
 
       {/* Featured Categories */}
-      <section className="mb-16">
+      <section className="container mb-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Popular Categories</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <CategoryCard
@@ -93,7 +93,7 @@ export default function ColoringPagesHub() {
       </section>
 
       {/* Benefits of Coloring */}
-      <section className="mb-16 bg-gray-50 p-8 rounded-xl">
+      <section className="container mb-16 bg-gray-50 p-8 rounded-xl">
         <h2 className="text-3xl font-bold mb-6 text-center">Benefits of Coloring</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <BenefitCard
@@ -124,7 +124,7 @@ export default function ColoringPagesHub() {
       </section>
 
       {/* Latest Additions */}
-      <section className="mb-16">
+      <section className="container mb-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Latest Coloring Pages</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
@@ -155,7 +155,7 @@ export default function ColoringPagesHub() {
       </section>
 
       {/* FAQ Section */}
-      <section className="mb-16">
+      <section className="container mb-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
         <div className="max-w-3xl mx-auto space-y-6">
           <FaqItem
@@ -187,26 +187,26 @@ export default function ColoringPagesHub() {
             name: "Free Printable Coloring Pages",
             description:
               "Discover thousands of free printable coloring pages for kids and adults. Browse by category including Disney, animals, holidays, and more.",
-            url: "https://drawgle.com/coloring-pages",
+            url: "https://drawgle.in/coloring-pages",
             mainEntity: {
               "@type": "ItemList",
               itemListElement: [
                 {
                   "@type": "ListItem",
                   position: 1,
-                  url: "https://drawgle.com/coloring-pages-for-kids",
+                  url: "https://drawgle.in/coloring-pages-for-kids",
                   name: "Coloring Pages for Kids",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
-                  url: "https://drawgle.com/christmas-coloring-pages",
+                  url: "https://drawgle.in/christmas-coloring-pages",
                   name: "Christmas Coloring Pages",
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
-                  url: "https://drawgle.com/unicorn-coloring-pages",
+                  url: "https://drawgle.in/unicorn-coloring-pages",
                   name: "Unicorn Coloring Pages",
                 },
               ],

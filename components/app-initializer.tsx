@@ -8,13 +8,17 @@ export const AppInitializer = () => {
   const router = useRouter()
 
   useEffect(() => {
-    // Only run on protected routes
+    // Only run on protected routes (dashboard)
     if (typeof window !== "undefined") {
       const path = window.location.pathname
-      if (path.startsWith("/sign-in") || path.startsWith("/sign-up")) {
+      // Skip if on auth pages or public pages
+      if (path.startsWith("/sign-in") || 
+          path.startsWith("/sign-up") || 
+          !path.startsWith("/dashboard")) {
         return
       }
     }
+    
     const checkSession = async () => {
       const supabase = createClient()
       try {

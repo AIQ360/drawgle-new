@@ -71,11 +71,11 @@ export default function PublicFooter() {
         </div>
       </div>
 
-      <div className="container py-12 relative z-10">
+      <div className="container py-12 px-4 relative z-10">
 
 
         {/* Coloring pages section - with playful design */}
-        <div className="relative mb-16 p-8 rounded-2xl border border-primary/10 bg-primary/5 backdrop-blur-sm">
+        <div className="relative mb-16 p-4 rounded-2xl border border-primary/10 bg-primary/5 backdrop-blur-sm">
           <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-background px-4 py-2 rounded-full border border-primary/20">
             <div className="flex items-center gap-2">
               <Palette className="h-4 w-4 text-primary" />
@@ -118,9 +118,10 @@ export default function PublicFooter() {
                 className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
               >
                 <div className="p-2 rounded-full bg-background border border-border group-hover:border-primary/50 transition-colors">
-                  <Icons.twitter className="h-4 w-4" />
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
                 </div>
-                <span className="group-hover:underline underline-offset-4">@AiNotSoSmart</span>
               </Link>
             </div>
           </div>
