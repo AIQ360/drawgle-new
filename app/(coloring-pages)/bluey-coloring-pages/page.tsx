@@ -265,10 +265,6 @@ export default function BlueyColoringPages() {
                     <span>Simple lines for easy coloring</span>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-xl">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Free
-                </Button>
               </CardContent>
             </Card>
 
@@ -305,10 +301,7 @@ export default function BlueyColoringPages() {
                     <span>Teaches sibling love</span>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-xl">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Free
-                </Button>
+            
               </CardContent>
             </Card>
 
@@ -345,10 +338,7 @@ export default function BlueyColoringPages() {
                     <span>Teaches family values</span>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-xl">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Free
-                </Button>
+               
               </CardContent>
             </Card>
           </div>

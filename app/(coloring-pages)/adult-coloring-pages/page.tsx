@@ -100,13 +100,13 @@ export default function AdultColoringPages() {
                     Create Custom Pages
                   </Button>
                 </Link>
-                <Link href="/dashboard/subscription">
+                <Link href="/gallery">
                   <Button
                     size="lg"
                     variant="outline"
                     className="border-2 border-pastel-pink/30 hover:border-pastel-pink px-8 py-6 text-lg font-medium rounded-xl hover:bg-pastel-pink/5 transition-all duration-300 bg-transparent"
                   >
-                    Browse Collection
+                    Browse Free Pages
                   </Button>
                 </Link>
               </div>
@@ -869,7 +869,7 @@ export default function AdultColoringPages() {
                     className="bg-white text-pastel-pink hover:bg-gray-50 px-8 py-6 text-lg font-semibold rounded-xl"
                   >
                     <Download className="w-5 h-5 mr-2" />
-                    Download Free Starter Pack
+                    Create 5 free coloring pages
                   </Button>
                 </Link>
                 <Link href="/gallery">

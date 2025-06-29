@@ -18,6 +18,11 @@ export default function PublicFooter() {
     { name: "Bluey", href: "/bluey-coloring-pages" },
     { name: "Sonic", href: "/sonic-coloring-pages" },
     { name: "Spiderman", href: "/spiderman-coloring-pages" },
+    { name: "Dinosaur", href: "/dinosaur-coloring-pages" },
+    { name: "Winne The Pooh", href: "/winnie-the-pooh-coloring-pages" },
+    { name: "Happy Birthday", href: "/happy-birthday-coloring-pages" },
+    { name: "Godzilla", href: "/godzilla-coloring-pages" },
+    { name: "Ninja Turtles", href: "/ninja-turtles-coloring-pages" },
     { name: "Coloring Book Generator", href: "/coloring-book-generator" },
   ]
 

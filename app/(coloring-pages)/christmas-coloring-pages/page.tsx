@@ -97,7 +97,7 @@ export default function ChristmasColoringPages() {
                   Create Christmas Pages
                 </Button>
               </Link>
-              <Link href="/gallery">
+              <Link href="/free-coloring-pages">
               <Button
                 size="lg"
                 variant="outline"
@@ -266,9 +266,7 @@ export default function ChristmasColoringPages() {
                     <span>North Pole landscapes</span>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-xl">
-                  Explore Santa Collection
-                </Button>
+              
               </CardContent>
             </Card>
 
@@ -309,9 +307,7 @@ export default function ChristmasColoringPages() {
                     <span>Star of Bethlehem designs</span>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-xl">
-                  Browse Religious Pages
-                </Button>
+              
               </CardContent>
             </Card>
 
@@ -352,9 +348,7 @@ export default function ChristmasColoringPages() {
                     <span>Festive home decorations</span>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-xl">
-                  View Tree Designs
-                </Button>
+            
               </CardContent>
             </Card>
 
@@ -394,9 +388,8 @@ export default function ChristmasColoringPages() {
                     <span>Holiday village settings</span>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-xl">
-                  Explore Winter Scenes
-                </Button>
+             
+          
               </CardContent>
             </Card>
 
@@ -431,9 +424,7 @@ export default function ChristmasColoringPages() {
                     <span>Holiday animal characters</span>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-xl">
-                  Meet the Characters
-                </Button>
+           
               </CardContent>
             </Card>
 
@@ -468,9 +459,7 @@ export default function ChristmasColoringPages() {
                     <span>Holiday shopping themes</span>
                   </div>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white rounded-xl">
-                  Discover Gift Pages
-                </Button>
+           
               </CardContent>
             </Card>
           </div>
