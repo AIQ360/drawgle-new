@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function NinjaTurtlesColoringPages() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pastel-pink/10 via-white to-orange-50 relative">
+    <div className="min-h-screen py-24 bg-gradient-to-br from-pastel-pink/10 via-white to-orange-50 relative">
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-[0.02]"
@@ -105,30 +105,6 @@ export default function NinjaTurtlesColoringPages() {
                   <Palette className="h-5 w-5 mr-2" />
                   View All Categories
                 </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="container mx-auto px-4 py-12">
-          <div className="bg-white/60 backdrop-blur-sm border border-pastel-pink/20 rounded-3xl p-8 shadow-sm">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">350+</div>
-                <div className="text-gray-600">TMNT Pages</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">4</div>
-                <div className="text-gray-600">Hero Turtles</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-purple-600 mb-2">15+</div>
-                <div className="text-gray-600">Characters</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-orange-600 mb-2">100%</div>
-                <div className="text-gray-600">Free & Safe</div>
               </div>
             </div>
           </div>
@@ -276,10 +252,7 @@ export default function NinjaTurtlesColoringPages() {
                   <li>• Great for crayons</li>
                   <li>• Basic action scenes</li>
                 </ul>
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                  <Download className="h-4 w-4 mr-2" />
-                  Easy TMNT Pages
-                </Button>
+               
               </div>
 
               {/* Medium for Tweens */}
@@ -297,10 +270,7 @@ export default function NinjaTurtlesColoringPages() {
                   <li>• City backgrounds</li>
                   <li>• Villain encounters</li>
                 </ul>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  <Download className="h-4 w-4 mr-2" />
-                  Action TMNT Pages
-                </Button>
+           
               </div>
 
               {/* Complex for Adults */}
@@ -319,10 +289,7 @@ export default function NinjaTurtlesColoringPages() {
                   <li>• Artistic designs</li>
                   <li>• Stress relief focus</li>
                 </ul>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white">
-                  <Download className="h-4 w-4 mr-2" />
-                  Adult TMNT Pages
-                </Button>
+              
               </div>
             </div>
           </div>
@@ -600,7 +567,7 @@ export default function NinjaTurtlesColoringPages() {
                 className="bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white border-0"
               >
                 <Download className="h-5 w-5 mr-2" />
-                Download Free TMNT Pages
+                Create Free TMNT Pages
               </Button>
               <Button
                 size="lg"
@@ -613,82 +580,7 @@ export default function NinjaTurtlesColoringPages() {
           </div>
         </section>
 
-        {/* Related Categories */}
-        <section className="container mx-auto px-4 py-12">
-          <div className="bg-white/60 backdrop-blur-sm border border-pastel-pink/20 rounded-3xl p-8 shadow-sm">
-            <h2 className="text-3xl font-bold mb-8 text-center">More Awesome Coloring Adventures</h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="bg-white/60 backdrop-blur-sm border border-pastel-pink/20 overflow-hidden hover:shadow-sm transition-all duration-300 group">
-                <div className="aspect-video relative">
-                  <Image
-                    src="/placeholder.svg?height=300&width=500"
-                    alt="Spiderman Coloring Pages"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold mb-2">Spider-Man Pages</h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Swing into action with your friendly neighborhood Spider-Man
-                  </p>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full border-pastel-pink/30 hover:bg-pastel-pink/10 bg-transparent"
-                  >
-                    <Link href="/spiderman-coloring-pages">Color Spider-Man</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/60 backdrop-blur-sm border border-pastel-pink/20 overflow-hidden hover:shadow-sm transition-all duration-300 group">
-                <div className="aspect-video relative">
-                  <Image
-                    src="/placeholder.svg?height=300&width=500"
-                    alt="Pokemon Coloring Pages"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold mb-2">Pokemon Adventures</h3>
-                  <p className="text-gray-600 text-sm mb-4">Catch 'em all with Pikachu and friends</p>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full border-pastel-pink/30 hover:bg-pastel-pink/10 bg-transparent"
-                  >
-                    <Link href="/pokemon-coloring-pages">Color Pokemon</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/60 backdrop-blur-sm border border-pastel-pink/20 overflow-hidden hover:shadow-sm transition-all duration-300 group">
-                <div className="aspect-video relative">
-                  <Image
-                    src="/placeholder.svg?height=300&width=500"
-                    alt="Dinosaur Coloring Pages"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold mb-2">Dinosaur World</h3>
-                  <p className="text-gray-600 text-sm mb-4">Roar into prehistoric adventures with T-Rex and friends</p>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full border-pastel-pink/30 hover:bg-pastel-pink/10 bg-transparent"
-                  >
-                    <Link href="/dinosaur-coloring-pages">Color Dinosaurs</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
 
         {/* Schema.org structured data */}
         <script

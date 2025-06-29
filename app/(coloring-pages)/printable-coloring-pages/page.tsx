@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function PrintableColoringPages() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-pink-100">
+    <div className="min-h-screen py-24 bg-gradient-to-br from-pink-50 via-orange-50 to-pink-100">
       <SchemaWebPage
         name="Printable Coloring Pages"
         description="High-quality printable coloring pages designed specifically for home printing with perfect results every time."
@@ -106,18 +106,12 @@ export default function PrintableColoringPages() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl">
-                      <Download className="h-5 w-5 mr-2" />
-                      Browse Printable Pages
-                    </Button>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-8 py-3 rounded-xl bg-transparent"
-                    >
-                      <Printer className="h-5 w-5 mr-2" />
-                      Printing Guide
-                    </Button>
+                    <Link href="/dashboard">
+                      <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl">
+                        <Download className="h-5 w-5 mr-2" />
+                        Create 5 free Printable Pages
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 
@@ -206,7 +200,6 @@ export default function PrintableColoringPages() {
               href="/coloring-pages-for-kids"
               image="/placeholder.svg?height=300&width=400"
               description="Simple designs with thick lines that print perfectly for little hands. Ages 3-8 love these!"
-              count="500+"
               difficulty="Easy to Print"
               color="bg-blue-100 text-blue-800"
             />
@@ -216,7 +209,6 @@ export default function PrintableColoringPages() {
               href="/christmas-coloring-pages"
               image="/placeholder.svg?height=300&width=400"
               description="Festive holiday designs optimized for home printing. Perfect for family activities."
-              count="200+"
               difficulty="Family Friendly"
               color="bg-red-100 text-red-800"
             />
@@ -226,7 +218,7 @@ export default function PrintableColoringPages() {
               href="/adult-coloring-pages"
               image="/placeholder.svg?height=300&width=400"
               description="Detailed designs that print with crisp, clear lines for stress-relief coloring."
-              count="300+"
+            
               difficulty="Detailed"
               color="bg-purple-100 text-purple-800"
             />
@@ -236,7 +228,7 @@ export default function PrintableColoringPages() {
               href="/animal-coloring-pages"
               image="/placeholder.svg?height=300&width=400"
               description="Cute animals with clean lines that print beautifully on any home printer."
-              count="400+"
+             
               difficulty="All Ages"
               color="bg-green-100 text-green-800"
             />
@@ -246,7 +238,7 @@ export default function PrintableColoringPages() {
               href="/pokemon-coloring-pages"
               image="/placeholder.svg?height=300&width=400"
               description="Popular Pokemon characters designed for perfect printing results."
-              count="150+"
+              
               difficulty="Kid Favorite"
               color="bg-yellow-100 text-yellow-800"
             />
@@ -256,7 +248,7 @@ export default function PrintableColoringPages() {
               href="/halloween-coloring-pages"
               image="/placeholder.svg?height=300&width=400"
               description="Spooky fun designs that print clearly for Halloween activities."
-              count="120+"
+          
               difficulty="Seasonal"
               color="bg-orange-100 text-orange-800"
             />
@@ -738,7 +730,7 @@ export default function PrintableColoringPages() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl">
                 <Download className="h-5 w-5 mr-2" />
-                Browse All Printable Pages
+                Create Free Printable Pages
               </Button>
               <Button
                 size="lg"
@@ -765,15 +757,13 @@ function PrintableCollectionCard({
   href,
   image,
   description,
-  count,
   difficulty,
-  color,
 }: {
   title: string
   href: string
   image: string
   description: string
-  count: string
+ 
   difficulty: string
   color: string
 }) {
@@ -787,7 +777,6 @@ function PrintableCollectionCard({
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          <div className={`absolute top-3 right-3 ${color} px-3 py-1 rounded-full text-sm font-medium`}>{count}</div>
           <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-xs font-medium">
             {difficulty}
           </div>
@@ -795,10 +784,7 @@ function PrintableCollectionCard({
         <CardContent className="p-6">
           <h3 className="text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors">{title}</h3>
           <p className="text-gray-600 text-sm mb-4 leading-relaxed">{description}</p>
-          <Button className="w-full bg-orange-500 hover:bg-orange-600">
-            <Download className="h-4 w-4 mr-2" />
-            View Printable Pages
-          </Button>
+         
         </CardContent>
       </Card>
     </Link>

@@ -716,11 +716,15 @@ export default function FreeColoringPages() {
           </div>
 
           <div className="text-center mt-8">
+            
             <Button
               size="lg"
               className="bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white px-8 py-6 text-lg font-semibold rounded-xl"
+              asChild
             >
-              View All New Free Pages
+              <Link href="/gallery">
+                View All New Free Pages
+              </Link>
             </Button>
           </div>
         </section>
@@ -802,7 +806,6 @@ export default function FreeColoringPages() {
                     {category.title}
                   </h3>
                   <p className="text-xs text-gray-600 mt-1">{category.subtitle}</p>
-                  <div className="text-xs text-green-600 font-medium mt-2">Free Collection</div>
                 </div>
               </Link>
             ))}
