@@ -131,7 +131,7 @@ export default function PublicHeader() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden h-8 w-8 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center"
+                className="md:hidden h-8 w-8 rounded bg-gray-100 hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center"
               >
                 {isMenuOpen ? (
                   <X className="h-4 w-4 text-gray-600" />

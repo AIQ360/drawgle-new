@@ -62,10 +62,11 @@ export function Header({ user }: HeaderProps) {
       </div>
       <div className="flex flex-1 items-center justify-end gap-4">
         <div className="flex items-center gap-4">
-          <Button variant="outline" className="hidden md:flex">
-            <span className="mr-2">{credits}</span>
-            Credits
-          </Button>
+          <div className="flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-sm font-medium text-primary">
+            <Icons.credit className="mr-1 h-4 w-4 text-yellow-500" />
+            <span>{credits}</span>
+            <span>Credits</span>
+          </div>
           <Link href="/dashboard/subscription" passHref>
             <Button variant="outline" className="hidden md:flex">
               Upgrade
@@ -75,18 +76,18 @@ export function Header({ user }: HeaderProps) {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src="/placeholder.svg" alt={user?.email || "User"} />
+                  <AvatarImage src="/avatar.png" alt={user?.email || "User"} />
                   <AvatarFallback>{user?.email?.charAt(0).toUpperCase() || "U"}</AvatarFallback>
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>
+                <Link href="/dashboard" className=" text-primary">
+                  Dashboard
+                </Link>
+              </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="md:hidden">
-                <span className="mr-2">{credits}</span>
-                Credits
-              </DropdownMenuItem>
               <DropdownMenuItem asChild className="md:hidden">
                 <Link href="/dashboard/subscription">Upgrade</Link>
               </DropdownMenuItem>
@@ -94,7 +95,10 @@ export function Header({ user }: HeaderProps) {
                 <Link href="/dashboard/gallery">My Gallery</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/dashboard/subscription">Subscription</Link>
+                <Link href="/dashboard/books">My Books</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/gallery">Public Gallery</Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={handleSignOut} disabled={isSigningOut}>

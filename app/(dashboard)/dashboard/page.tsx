@@ -48,7 +48,7 @@ export default async function DashboardPage() {
             <p className="text-muted-foreground">Welcome back! Create and manage your coloring pages.</p>
           </div>
           <Link href="/dashboard/create" passHref>
-            <Button className="bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white">Create New Coloring Page</Button>
+            <Button className="bg-gradient-to-r from-pastel-pink rounded-sm to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white">Create New Coloring Page</Button>
           </Link>
         </div>
 

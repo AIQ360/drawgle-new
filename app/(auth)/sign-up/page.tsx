@@ -53,7 +53,7 @@ export default function SignUpPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <PublicHeader />
-      <main className="flex-1 relative overflow-hidden">
+      <main className="flex-1 py-12 relative overflow-hidden">
         {/* Simple Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-pastel-pink/5 via-white to-orange-50/20"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px]"></div>
@@ -61,14 +61,14 @@ export default function SignUpPage() {
         <section className="w-full py-12 md:py-24 lg:py-32 relative z-10">
           <div className="container grid items-center gap-12 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
             {/* Form Column - Now First on Mobile */}
-            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="flex justify-center lg:justify-end order-2 lg:order-2">
               <div className="w-full max-w-sm">
                 <AuthForm view="sign-up" />
               </div>
             </div>
 
             {/* Content Column - Now Second on Mobile */}
-            <div className="space-y-8 text-center lg:text-left order-2 lg:order-1">
+            <div className="space-y-8 text-center lg:text-left order-1 lg:order-1">
               <div className="space-y-4">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
                   Start Creating with{" "}
@@ -82,20 +82,6 @@ export default function SignUpPage() {
                 </p>
               </div>
 
-              {/* Sample Coloring Page Image */}
-              <div className="flex justify-center lg:justify-center">
-                <div className="relative w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] md:w-[360px] md:h-[450px] bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
-                  <Image
-                    src="https://rhcmqpuqozvwyrffixnx.supabase.co/storage/v1/object/public/coloring-pages/private/cae7654d-bd38-46fc-b82d-c50fa5402535-1747041104711-0-a_unicorn.png"
-                    alt="Sample coloring page - unicorn illustration"
-                    fill
-                    style={{ objectFit: "cover" }}
-                    priority
-                    sizes="(max-width: 768px) 280px, (max-width: 1024px) 320px, 360px"
-                    className="rounded-2xl"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </section>

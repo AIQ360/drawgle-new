@@ -21,7 +21,7 @@ export function Sidebar({ className }: SidebarProps) {
        
         <div className="px-4">
           <Link href="/dashboard/create" passHref>
-            <Button className="w-full justify-start gap-2 bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white">
+            <Button className="w-full rounded-sm justify-start gap-2 bg-gradient-to-r from-pastel-pink to-orange-400 hover:from-pastel-pink/90 hover:to-orange-400/90 text-white">
               <Icons.wand className="h-4 w-4" />
               Create Coloring Pages
             </Button>
@@ -34,7 +34,7 @@ export function Sidebar({ className }: SidebarProps) {
               <Button
                 variant="ghost"
                 className={cn(
-                  "w-full justify-start gap-2",
+                  "w-full rounded-sm justify-start gap-2",
                   pathname === "/dashboard"
                     ? "bg-accent text-accent-foreground"
                     : "bg-transparent text-current hover:bg-transparent hover:text-current",
@@ -48,7 +48,7 @@ export function Sidebar({ className }: SidebarProps) {
               <Button
                 variant="ghost"
                 className={cn(
-                  "w-full justify-start gap-2",
+                  "w-full rounded-sm justify-start gap-2",
                   pathname === "/dashboard/gallery"
                     ? "bg-accent text-accent-foreground"
                     : "bg-transparent text-current hover:bg-transparent hover:text-current",
@@ -62,7 +62,7 @@ export function Sidebar({ className }: SidebarProps) {
               <Button
                 variant="ghost"
                 className={cn(
-                  "w-full justify-start gap-2",
+                  "w-full rounded-sm justify-start gap-2",
                   pathname === "/dashboard/books"
                     ? "bg-accent text-accent-foreground"
                     : "bg-transparent text-current hover:bg-transparent hover:text-current",
@@ -75,7 +75,7 @@ export function Sidebar({ className }: SidebarProps) {
             <Link href="/gallery" passHref>
               <Button
                 variant="ghost"
-                className={cn("w-full justify-start gap-2", "bg-transparent text-current hover:bg-transparent hover:text-current")}
+                className={cn("w-full rounded-sm justify-start gap-2", "bg-transparent text-current hover:bg-transparent hover:text-current")}
               >
                 <GlobeIcon className="h-4 w-4" />
                 Public Gallery
@@ -85,7 +85,7 @@ export function Sidebar({ className }: SidebarProps) {
               <Button
                 variant="ghost"
                 className={cn(
-                  "w-full justify-start gap-2",
+                  "w-full rounded-sm  justify-start gap-2",
                   pathname === "/dashboard/subscription"
                     ? "bg-accent text-accent-foreground"
                     : "bg-transparent text-current hover:bg-transparent hover:text-current",
