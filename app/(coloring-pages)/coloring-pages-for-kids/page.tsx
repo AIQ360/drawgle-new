@@ -3,6 +3,42 @@ import Image from "next/image"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
+// Define your images and links
+const images = [
+  {
+    alt: "Simple toddler coloring page 1",
+    src: "/pages/elephant-1.jpeg",
+  },
+  {
+    alt: "Simple toddler coloring page 2",
+    src: "/pages/airoplane-1.jpeg",
+  },
+  {
+    alt: "Simple toddler coloring page 3",
+    src: "/pages/fish-1.jpeg",
+  },
+    {
+      alt: "Simple toddler coloring page 4",
+      src: "/pages/monkey-1.jpeg",
+    },
+];
+
+// Preschool images
+const preschoolImages = [
+  { src: "/pages/cake-1.jpeg", alt: "Cake for preschoolers" },
+  { src: "/pages/house-1.jpeg", alt: "House for preschoolers" },
+  { src: "/pages/rabbit-1.jpeg", alt: "Rabbit for preschoolers" },
+  { src: "/pages/turtle-1.jpeg", alt: "Turtle for preschoolers" },
+];
+
+// Elementary images
+const elementaryImages = [
+  { src: "/pages/learning-1.jpeg", alt: "Rocket for elementary" },
+  { src: "/pages/santa-1.jpeg", alt: "Robot for elementary" },
+  { src: "/pages/snowy-1.jpeg", alt: "Mandala for elementary" },
+  { src: "/pages/xmas-1.jpeg", alt: "Earth for elementary" },
+];
+
 export const metadata: Metadata = {
   title: "Coloring Pages for Kids - Free Printable Children's Coloring Sheets | Drawgle",
   description:
@@ -207,19 +243,17 @@ export default function KidsColoringPages() {
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
-                  <div className="aspect-square relative">
-                    <Image
-                      src={`/placeholder.svg?height=150&width=150&query=simple%20toddler%20coloring%20page%20${i}`}
-                      alt={`Simple toddler coloring page ${i}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+  {images.map((img, i) => (
+      <div className="aspect-square relative border border-gray-200 rounded-lg overflow-hidden hover:shadow transition">
+        <Image
+          src={img.src}
+          alt={img.alt}
+          fill
+          className="object-cover"
+        />
+      </div>
+  ))}
+</div>
           </div>
         </div>
 
@@ -259,19 +293,17 @@ export default function KidsColoringPages() {
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
-                  <div className="aspect-square relative">
-                    <Image
-                      src={`/placeholder.svg?height=150&width=150&query=preschool%20coloring%20page%20${i}`}
-                      alt={`Preschool coloring page ${i}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+  {preschoolImages.map((img, i) => (
+      <div className="aspect-square relative border border-gray-200 rounded-lg overflow-hidden hover:shadow transition">
+        <Image
+          src={img.src}
+          alt={img.alt}
+          fill
+          className="object-cover"
+        />
+      </div>
+  ))}
+</div>
           </div>
         </div>
 
@@ -312,19 +344,14 @@ export default function KidsColoringPages() {
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
-                  <div className="aspect-square relative">
-                    <Image
-                      src={`/placeholder.svg?height=150&width=150&query=elementary%20school%20coloring%20page%20${i}`}
-                      alt={`Elementary school coloring page ${i}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+  {elementaryImages.map((img, i) => (
+    <div key={i} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
+      <div className="aspect-square relative">
+        <Image src={img.src} alt={img.alt} fill className="object-cover" />
+      </div>
+    </div>
+  ))}
+</div>
           </div>
         </div>
       </section>
@@ -498,71 +525,7 @@ export default function KidsColoringPages() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Link href="/spring-coloring-pages" className="group">
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
-              <div className="aspect-square relative">
-                <Image
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Spring coloring pages for kids"
-                  fill
-                  className="object-cover group-hover:scale-105 transition duration-300"
-                />
-              </div>
-              <div className="p-3 text-center">
-                <h4 className="font-bold group-hover:text-blue-600 transition">Spring Pages</h4>
-              </div>
-            </div>
-          </Link>
 
-          <Link href="/summer-coloring-pages" className="group">
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
-              <div className="aspect-square relative">
-                <Image
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Summer coloring pages for kids"
-                  fill
-                  className="object-cover group-hover:scale-105 transition duration-300"
-                />
-              </div>
-              <div className="p-3 text-center">
-                <h4 className="font-bold group-hover:text-blue-600 transition">Summer Pages</h4>
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/fall-coloring-pages" className="group">
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
-              <div className="aspect-square relative">
-                <Image
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Fall autumn coloring pages for kids"
-                  fill
-                  className="object-cover group-hover:scale-105 transition duration-300"
-                />
-              </div>
-              <div className="p-3 text-center">
-                <h4 className="font-bold group-hover:text-blue-600 transition">Fall Pages</h4>
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/winter-coloring-pages" className="group">
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
-              <div className="aspect-square relative">
-                <Image
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Winter Christmas coloring pages for kids"
-                  fill
-                  className="object-cover group-hover:scale-105 transition duration-300"
-                />
-              </div>
-              <div className="p-3 text-center">
-                <h4 className="font-bold group-hover:text-blue-600 transition">Winter Pages</h4>
-              </div>
-            </div>
-          </Link>
-        </div>
       </section>
 
       {/* Comprehensive Tips Section */}
